@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>안녕자두야너무재밌어</title>
   
-  <!-- 구글 웹폰트에서 가장 귀여운 '개구체(Gaegu)' 공식 임포트 -->
+  <!-- 구글 웹폰트 개구체 공식 임포트 -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap">
   
   <style>
@@ -16,7 +16,6 @@
     }
 
     body {
-      /* 전체 홈페이지 폰트를 개구체(Gaegu)로 전면 적용 */
       font-family: 'Gaegu', 'Malgun Gothic', sans-serif;
       min-height: 100vh;
       background: linear-gradient(
@@ -96,7 +95,6 @@
       flex: 1;
     }
 
-    /* 🍒 메인 제목: 개구체만의 삐뚤빼뚤 짱 귀여운 버블 텍스트 효과 */
     .hero h1 {
       font-size: 6.5rem;
       line-height: 1.1;
@@ -144,12 +142,6 @@
       box-shadow: 0 15px 35px rgba(255, 78, 80, 0.2);
       border: 6px solid #fff;
       background-color: #fff;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .hero-profile img:hover {
-      transform: scale(1.06) rotate(-2deg);
-      box-shadow: 0 22px 45px rgba(255, 78, 80, 0.3);
     }
 
     .grid {
@@ -182,17 +174,17 @@
       box-shadow: 0 20px 45px rgba(255, 78, 80, 0.15);
     }
 
-    .card.main-jadoo-card, .card.chart-card {
+    .card.main-jadoo-card, .card.chart-card, .card.full-width-card {
       grid-column: span 2;
       background: rgba(255, 255, 255, 0.85);
     }
     
-    .card.main-jadoo-card {
+    .card.main-jadoo-card, .card.full-width-card {
       border: 3px dashed #ff4e50;
     }
     
     @media (max-width: 1100px) {
-      .card.main-jadoo-card, .card.chart-card {
+      .card.main-jadoo-card, .card.chart-card, .card.full-width-card {
         grid-column: span 1;
       }
     }
@@ -208,7 +200,7 @@
       gap: 8px;
     }
     
-    .card.main-jadoo-card h2, .card.chart-card h2 {
+    .card.main-jadoo-card h2, .card.chart-card h2, .card.full-width-card h2 {
       color: #ff4e50;
     }
 
@@ -259,10 +251,6 @@
       margin-bottom: 18px;
     }
 
-    .stat:last-of-type {
-      margin-bottom: 5px;
-    }
-
     .stat-top {
       display: flex;
       justify-content: space-between;
@@ -301,7 +289,7 @@
     .jadoo-media-box {
       margin-top: 25px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 16px;
       width: 100%;
     }
@@ -309,7 +297,7 @@
     .jadoo-media-box .img-wrapper {
       width: 100%;
       background: #fff;
-      padding: 6px;
+      padding: 8px;
       border-radius: 24px;
       box-shadow: 0 8px 20px rgba(255, 78, 80, 0.08);
       border: 2px solid rgba(255, 78, 80, 0.15);
@@ -320,21 +308,46 @@
 
     .jadoo-media-box img {
       width: 100%;
-      height: 170px;
-      object-fit: cover;
+      max-height: 200px;
+      object-fit: contain;
       border-radius: 18px;
       display: block;
-      transition: all 0.3s ease;
-    }
-    
-    .jadoo-media-box img.gif-asset {
-      object-fit: contain;
     }
 
-    .jadoo-media-box .img-wrapper:hover {
-      transform: translateY(-6px) scale(1.03);
-      border-color: #ff4e50;
-      box-shadow: 0 15px 30px rgba(255, 78, 80, 0.2);
+    .intro-section {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    
+    .intro-section .img-wrapper {
+      width: 220px;
+      flex-shrink: 0;
+      background: #fff;
+      padding: 8px;
+      border-radius: 24px;
+      border: 2px solid rgba(255, 78, 80, 0.15);
+    }
+    
+    .intro-section .img-wrapper img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: contain;
+    }
+    
+    .intro-section .info-text {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .intro-section .img-wrapper {
+        width: 100%;
+        max-width: 250px;
+      }
     }
 
     .chart-container {
@@ -405,9 +418,6 @@
       .hero h1 {
         font-size: 3.8rem;
       }
-      .jadoo-media-box {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 600px) {
@@ -431,9 +441,6 @@
         width: 170px;
         height: 215px;
       }
-      .jadoo-media-box {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -455,11 +462,10 @@
           안녕자두야<br>너무재밌어
         </h1>
         <p>
-          안녕자두야너무재밌어! 💖 내 최애 캐릭터 <strong>'최자두'</strong>의 새콤달콤 짱 귀여운 테마를 온 동네에 듬뿍 입힌 역대급 메인 페이지라구! 물론 부산 날씨, 핫한 지역 뉴스, 우리 부경대 소식에 사회복지 통계 데이터까지 하나도 안 빼놓고 똑 부러지게 모아둔 올인원 아카이브 룸이니까 다들 눈 크게 뜨고 구경해 봐! 체리 콕! 🍒[cite: 2]
+          안녕자두야너무재밌어! 💖 내 최애 캐릭터 <strong>'최자두'</strong>의 새콤달콤 짱 귀여운 테마를 온 동네에 듬뿍 입힌 역대급 메인 페이지라구! 물론 부산 날씨, 핫한 지역 뉴스, 우리 부경대 소식에 사회복지 통계 데이터까지 하나도 안 빼놓고 똑 부러지게 모아둔 올인원 아카이브 룸이니까 다들 눈 크게 뜨고 구경해 봐! 체리 콕! 🍒
         </p>
       </div>
       
-      <!-- 사용자님 프로필 사진 필수 적용 완료[cite: 2] -->
       <div class="hero-profile">
         <img src="513CF823-8901-490D-AF38-954F5942E196.png" alt="profile" onerror="this.src='profile.png'; this.onerror=function(){this.src='profile.jpg';};">
       </div>
@@ -496,7 +502,7 @@
         </ul>
       </div>
 
-      <!-- 4. 사회복지 통계 카드 (★ 종합 6개 항목 수량 체크 완료)[cite: 2] -->
+      <!-- 4. 사회복지 통계 카드 -->
       <div class="card">
         <h2>📊 사회복지 관련 통계 (종합)</h2>
         
@@ -513,7 +519,7 @@
         <div class="stat">
           <div class="stat-top">
             <span>독거노인 돌봄 서비스 만족도</span>
-            <span>84%[cite: 2]</span>
+            <span>84%</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 84%; background: linear-gradient(90deg, #ff7675, #ffb300);"></div>
@@ -522,8 +528,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>공공 아동 보육시설 충족률[cite: 2]</span>
-            <span>62%[cite: 2]</span>
+            <span>공공 아동 보육시설 충족률</span>
+            <span>62%</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 62%; background: linear-gradient(90deg, #ff7675, #1dd1a1);"></div>
@@ -532,8 +538,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>다문화 가정 정착 지원율[cite: 2]</span>
-            <span>55%[cite: 2]</span>
+            <span>다문화 가정 정착 지원율</span>
+            <span>55%</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 55%; background: linear-gradient(90deg, #6c5ce7, #7be3d5);"></div>
@@ -542,8 +548,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>장애인 의무 고용 이행률[cite: 2]</span>
-            <span>47%[cite: 2]</span>
+            <span>장애인 의무 고용 이행률</span>
+            <span>47%</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 47%; background: linear-gradient(90deg, #8d7dff, #ff7675);"></div>
@@ -552,8 +558,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>노인 빈곤 해소를 위한 일자리 참여율[cite: 2]</span>
-            <span>71%[cite: 2]</span>
+            <span>노인 빈곤 해소를 위한 일자리 참여율</span>
+            <span>71%</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 71%; background: linear-gradient(90deg, #ff4e50, #f9d423);"></div>
@@ -561,14 +567,14 @@
         </div>
       </div>
 
-      <!-- 5. 안녕 자두야 스페셜 대형 아카이브 카드 (★ 사진 인코딩 오류 완전 해결 완료)[cite: 2] -->
+      <!-- 5. 안녕 자두야 스페셜 대형 아카이브 카드 -->
       <div class="card main-jadoo-card">
         <h2>🍒 안녕 자두야 정밀 분석 & 아카이브</h2>
         
         <div class="stat">
           <div class="stat-top">
-            <span>최자두 명랑 & 골목대장 지수[cite: 2]</span>
-            <span>100% 만점[cite: 2]</span>
+            <span>최자두 명랑 & 골목대장 지수</span>
+            <span>100% 만점</span>
           </div>
           <div class="bar">
             <div class="fill jadoo" style="width: 100%"></div>
@@ -576,33 +582,28 @@
         </div>
 
         <ul>
-          <li><strong>작품 소개:</strong> 만화가 이빈의 원작 만화를 바탕으로 투니버스에서 제작되어 대히트를 기록한 대한민국 대표 패밀리 시트콤 애니메이션입니다.[cite: 2]</li>
-          <li><strong>시대적 배경:</strong> 1970~80년대 후반의 정겨운 가정과 골목길 풍경을 가슴 따뜻하고 코믹하게 담아내 전 세대의 공감대를 형성했습니다.[cite: 2]</li>
-          <li><strong>주요 등장인물:</strong> 말썽꾸러기 천방지축 주인공 <strong>최자두</strong>를 비롯해 짠순이 엄마 난향 씨, 술 좋아하는 아빠 호돌 씨, 똑순이 동생 미미와 귀여운 막내 애기까지 완벽한 케미스트리![cite: 2]</li>
-          <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.[cite: 2]</li>
+          <li><strong>작품 소개:</strong> 만화가 이빈의 원작 만화를 바탕으로 투니버스에서 제작되어 대히트를 기록한 대한민국 대표 패밀리 시트콤 애니메이션입니다.</li>
+          <li><strong>시대적 배경:</strong> 1970~80년대 후반의 정겨운 가정과 골목길 풍경을 가슴 따뜻하고 코믹하게 담아내 전 세대의 공감대를 형성했습니다.</li>
+          <li><strong>주요 등장인물:</strong> 말썽꾸러기 천방지축 주인공 <strong>최자두</strong>를 비롯해 짠순이 엄마 난향 씨, 술 좋아하는 아빠 호돌 씨, 똑순이 동생 미미와 귀여운 막내 애기까지 완벽한 케미스트리!</li>
+          <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.</li>
         </ul>
 
-        <!-- 📸 영문 alt 매핑 처리로 이미지 서버 인식 오류 완전 차단[cite: 2] -->
         <div class="jadoo-media-box">
           <div class="img-wrapper">
-            <img src="9791134835910.jpg" alt="photo1">
+            <img src="9791134835910.jpg" alt="book">
           </div>
           <div class="img-wrapper">
-            <img src="imgS_20250217105944.jpg" alt="photo2">
+            <img src="imgS_20250217105944.jpg" alt="still">
           </div>
           <div class="img-wrapper">
-            <img src="23007227_p.gif" class="gif-asset" alt="gif">
+            <img src="23007227_p.gif" class="gif-asset" alt="musical">
           </div>
         </div>
       </div>
 
-      <!-- 6. 지역별 유치원 원아수 현황 통계 그래프 카드[cite: 2] -->
+      <!-- 6. 지역별 유치원 원아수 현황 통계 그래프 카드 -->
       <div class="card chart-card">
         <h2>📊 지역별 유치원 원아수 현황 (KOSIS 통계)</h2>
-        <p style="font-size: 1.1rem; color: #444; background: none; padding: 0; margin-bottom: 15px; border: none; font-weight: 700;">
-          전국 주요 시도별 유치원 원아수 현황 분석 그래프입니다. (출처: KOSIS 국가통계포털)[cite: 2]
-        </p>
-        
         <div class="chart-container">
           <svg viewBox="0 0 400 240" width="100%" height="100%">
             <line x1="80" y1="0" x2="80" y2="210" class="chart-grid-line" style="stroke: #ff4e50; stroke-dasharray: 2; stroke-width: 1.5;"></line>
@@ -611,35 +612,107 @@
             <line x1="320" y1="0" x2="320" y2="210" class="chart-grid-line"></line>
             <line x1="380" y1="0" x2="380" y2="210" class="chart-grid-line"></line>
 
-            <text x="10" y="35" class="chart-text">경기도[cite: 2]</text>
+            <text x="10" y="35" class="chart-text">경기도</text>
             <rect x="80" y="20" width="290" height="22" rx="6" class="chart-bar" style="fill: #ff4e50;"></rect>
-            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 11px;">14.5만명[cite: 2]</text>
+            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 11px;">14.5만명</text>
 
-            <text x="10" y="75" class="chart-text">서울특별시[cite: 2]</text>
+            <text x="10" y="75" class="chart-text">서울특별시</text>
             <rect x="80" y="60" width="180" height="22" rx="6" class="chart-bar" style="fill: #ff7675;"></rect>
-            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 11px;">9.1만명[cite: 2]</text>
+            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 11px;">9.1만명</text>
 
-            <text x="10" y="115" class="chart-text">부산광역시[cite: 2]</text>
+            <text x="10" y="115" class="chart-text">부산광역시</text>
             <rect x="80" y="100" width="95" height="22" rx="6" class="chart-bar" style="fill: #ffa7a8;"></rect>
-            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 11px;">4.2만명[cite: 2]</text>
+            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 11px;">4.2만명</text>
 
-            <text x="10" y="155" class="chart-text">경상남도[cite: 2]</text>
+            <text x="10" y="155" class="chart-text">경상남도</text>
             <rect x="80" y="140" width="85" height="22" rx="6" class="chart-bar" style="fill: #ffd6d8; stroke: rgba(255,78,80,0.2);"></rect>
-            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.8만명[cite: 2]</text>
+            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.8만명</text>
 
-            <text x="10" y="195" class="chart-text">인천광역시[cite: 2]</text>
+            <text x="10" y="195" class="chart-text">인천광역시</text>
             <rect x="80" y="180" width="75" height="22" rx="6" class="chart-bar" style="fill: #ffeaa7;"></rect>
-            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.2만명[cite: 2]</text>
+            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.2만명</text>
 
             <line x1="80" y1="0" x2="80" y2="215" style="stroke: #ff4e50; stroke-width: 2;"></line>
           </svg>
         </div>
       </div>
 
+      <!-- 7. 주인공 '최자두' 정밀 소개 카드 (자두.png, 자두2.png 장착) -->
+      <div class="card full-width-card">
+        <h2>👧 천방지축 주인공 '최자두' 소개</h2>
+        <div class="intro-section">
+          <div class="jadoo-media-box" style="margin-top:0; grid-template-columns: 1fr 1fr; max-width:440px;">
+            <div class="img-wrapper"><img src="자두.png" alt="자두1"></div>
+            <div class="img-wrapper"><img src="자두2.png" alt="자두2"></div>
+          </div>
+          <div class="info-text">
+            <ul>
+              <li><strong>이름:</strong> 최자두 (초등학교 3학년)</li>
+              <li><strong>성격:</strong> 맑고 쾌활하며 불의를 보면 참지 못하는 낭만적인 골목대장 히어로! 공부나 집안일 돕기는 세상에서 제일 싫어하지만, 먹을 것 앞에서는 그 누구보다 빠른 발군의 기동력을 발휘합니다.</li>
+              <li><strong>매력 포인트:</strong> 머리에 예쁘게 묶은 두 갈래 방울 머리와 언제 어디서나 당당하게 앞장서는 엄청난 리더십이 트레이드 마크입니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. 자두의 단짝 친구들 소개 카드 (자두와 친구들.jpg 장착) -->
+      <div class="card full-width-card">
+        <h2>🎒 자두의 3학년 0반 단짝 친구들</h2>
+        <div class="intro-section">
+          <div class="img-wrapper">
+            <img src="자두와 친구들.jpg" alt="friends">
+          </div>
+          <div class="info-text">
+            <ul>
+              <li><strong>김민지:</strong> 자두의 우주 제일 소중한 베스트 프렌드! 조용하고 똑 부러지는 모범생 스타일이지만 자두의 무모한 도전에는 항상 든든하게 동참해 주는 의리파 소녀입니다.</li>
+              <li><strong>이윤석:</strong> 반장 부반장 콤비이자 츤데레 남사친! 겉으로는 맨날 자두를 짓궂게 놀리고 투닥거리지만, 뒤에서는 자두를 묵묵히 챙겨주고 제일 많이 신경 쓰는 소년입니다.</li>
+              <li><strong>장성훈:</strong> 자두를 짝사랑하는 부잣집 도련님. 연약하고 예민하지만 자두의 와일드하고 털털한 걸크러시 매력에 한눈에 반해 헌신적으로 구애하는 순정파 친구입니다.</li>
+              <li><strong>최은희:</strong> 자두의 영원한 라이벌 공주님! 예쁜 척, 있는 척을 다 하며 자두와 사사건건 기싸움을 벌이지만 은근히 허당기가 넘치는 귀여운 매력이 있습니다.</li>
+              <li><strong>돌돌이 & 딸기:</strong> 식탐 넘치는 유쾌한 분위기 메이커 돌돌이와, 안경을 쓰고 똑똑하지만 가끔 자두의 황당한 행동에 팩트 폭행을 날리는 딸기까지 모여 완벽한 단짝 군단을 이룹니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. 자두네 가족 소개 카드 (자두 가족.jpg 장착) -->
+      <div class="card full-width-card">
+        <h2>🏡 왁자지껄 자두네 개성만점 가족들</h2>
+        <div class="intro-section">
+          <div class="img-wrapper">
+            <img src="자두 가족.jpg" alt="family">
+          </div>
+          <div class="info-text">
+            <ul>
+              <li><strong>엄마 (난향 씨):</strong> 자두네 집 절대 권력자이자 최고의 짠순이! 매일 사고를 치고 다니는 자두 때문에 목소리가 마를 날이 없지만, 그 누구보다 가족들을 끔찍이 아끼고 사랑하는 어머니입니다.</li>
+              <li><strong>아빠 (최호돌 씨):</strong> 만년 대리이자 술과 월급날을 가장 좋아하는 소시민 아빠. 평소에는 엄마한테 꼼짝 못 하고 아이들과 친구처럼 놀아주지만, 결정적인 순간에는 가장의 든든한 책임감을 보여줍니다.</li>
+              <li><strong>동생 최미미:</strong> 자두의 바로 밑 여동생으로, 언니와는 정반대로 여성스럽고 공주 같은 아이템을 사랑합니다. 자두와 허구한 날 인형이나 옷 가지고 앙숙처럼 싸우지만 속으로는 언니를 엄청 따릅니다.</li>
+              <li><strong>막내 최승기 (애기):</strong> 자두네 집 귀염둥이 늦둥이 막내! 아직 말을 잘 못 하지만 집안의 온갖 사랑을 독차지하고 있으며, 누나들이 싸울 때마다 귀여운 힐링 에너지를 불어넣어 주는 마스코트입니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. 신규 추가: 아기 타조 '꼬꼬' 스페셜 아카이브 카드 (꼬꼬.png 장착) -->
+      <div class="card full-width-card">
+        <h2>🐣 자두네 집 깜짝 마스코트! 아기 타조 '꼬꼬'</h2>
+        <div class="intro-section">
+          <div class="img-wrapper" style="max-width: 220px;">
+            <img src="꼬꼬.png" alt="꼬꼬">
+          </div>
+          <div class="info-text">
+            <ul>
+              <li><strong>첫 만남 비화:</strong> 자두가 길거리 뽑기에서 병아리(닭)인 줄 알고 정성껏 키우기 위해 집으로 데려온 정체불명의 아기 새였습니다. 하지만 시간이 흐를수록 몸집이 집채만 하게 거대해지며 닭이 아니라 **'타조'**임이 밝혀져 온 가족을 기절초풍하게 만들었습니다!</li>
+              <li><strong>성격 및 특징:</strong> 은근히 성깔이 있고 화가 나면 자두 아빠나 자두를 무섭게 부리로 쪼아대며 집안을 난장판으로 만들곤 합니다. 하지만 자두네 가족들과 미운 정 고운 정이 듬뿍 들어, 나중에는 진짜 반려조처럼 왁자지껄하게 지내는 숨은 씬스틸러 동물 캐릭터입니다.</li>
+              <li><strong>비주얼 매력:</strong> 둥글고 커다란 회색 얼굴에 언제나 화가 나 있는 듯한 귀여운 'v자형' 눈매, 그리고 가느다란 목과 귀여운 노란 발이 치명적인 귀여움을 자랑합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <footer>
-      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)[cite: 2]
+      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)
     </footer>
 
   </div>
