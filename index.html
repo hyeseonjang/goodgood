@@ -144,7 +144,6 @@
       background-color: #fff;
     }
 
-    /* 🏷️ 신규 카테고리 탭 내비게이션 바 디자인 */
     .tab-menu {
       display: flex;
       justify-content: center;
@@ -174,7 +173,6 @@
       border-color: #ff4e50;
     }
 
-    /* 클릭되어서 현재 활성화된 카테고리 버튼 */
     .tab-btn.active {
       background: #ff4e50;
       color: #fff;
@@ -182,7 +180,6 @@
       box-shadow: 0 8px 20px rgba(255, 78, 80, 0.3);
     }
 
-    /* 📦 카테고리 콘텐츠 그리드 보드 */
     .grid {
       padding-left: 120px;
       display: grid;
@@ -192,19 +189,16 @@
       z-index: 1;
     }
 
-    /* 🚫 클릭 전에는 숨겨놓는 탭 콘텐츠 클래스 */
     .tab-content {
       display: none;
-      grid-column: span 2; /* 기본적으로 자두 콘텐츠들은 시원하게 대형 배치 */
+      grid-column: span 2;
       width: 100%;
     }
 
-    /* 👁️ 자바스크립트로 active가 붙으면 화면에 그리드로 노출 */
     .tab-content.active {
       display: block;
     }
     
-    /* 서브 그리드 레이아웃 (날씨, 이슈 같은 작은 카드들을 묶을 때 사용) */
     .sub-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -346,7 +340,6 @@
       100% { background-position: 100% 50%; }
     }
 
-    /* 📸 상단 와이드 대형 이미지 전용 보드 */
     .top-large-image-board {
       width: 100%;
       background: #fff;
@@ -485,7 +478,6 @@
 
   <div class="container">
 
-    <!-- 점포 대문 프로필 상단 고정 -->
     <section class="hero">
       <div class="hero-text">
         <h1>
@@ -501,7 +493,6 @@
       </div>
     </section>
 
-    <!-- 🏷️ 카테고리 클릭 메뉴 내비게이션 바 -->
     <nav class="tab-menu">
       <button class="tab-btn active" onclick="openCategory('jadoo')">👧 자두 소개</button>
       <button class="tab-btn" onclick="openCategory('friends')">🎒 단짝 친구들</button>
@@ -511,10 +502,9 @@
       <button class="tab-btn" onclick="openCategory('stats')">📊 사회복지 통계</button>
     </nav>
 
-    <!-- 📦 카테고리 메인 컨테이너 그리드 -->
     <section class="grid">
 
-      <!-- 카테고리 1: 자두 소개 (기본 활성화) -->
+      <!-- 카테고리 1: 자두 소개 -->
       <div id="jadoo" class="tab-content active">
         <div class="card full-width-card">
           <h2>👧 천방지축 주인공 '최자두' 소개</h2>
@@ -581,7 +571,8 @@
               <li><strong>엄마 (난향 씨):</strong> 자두네 집 절대 권력자이자 최고의 짠순이! 매일 사고를 치고 다니는 자두 때문에 목소리가 마를 날이 없지만, 그 누구보다 가족들을 끔찍이 아끼고 사랑하는 어머니입니다.</li>
               <li><strong>아빠 (최호돌 씨):</strong> 만년 대리이자 술과 월급날을 가장 좋아하는 소시민 아빠. 평소에는 엄마한테 꼼짝 못 하고 아이들과 친구처럼 놀아주지만, 결정적인 순간에는 가장의 든든한 책임감을 보여줍니다.</li>
               <li><strong>동생 최미미:</strong> 자두의 바로 밑 여동생으로, 언니와는 정반대로 여성스럽고 공주 같은 아이템을 사랑합니다. 자두와 허구한 날 앙숙처럼 싸우지만 속으로는 언니를 엄청 따릅니다.</li>
-              <li>막내 최승기 (애기): 집안의 온갖 사랑을 독차지하고 있으며, 누나들이 싸울 때마다 귀여운 힐링 에너지를 불어넣어 주는 마스코트입니다.</li>
+              <!-- 🛠️ 요기가 수정된 파트! 애기 이름에 <strong> 태그를 완벽하게 추가해 놨어! -->
+              <li><strong>막내 최승기 (애기):</strong> 집안의 온갖 사랑을 독차지하고 있으며, 누나들이 싸울 때마다 귀여운 힐링 에너지를 불어넣어 주는 마스코트입니다.</li>
             </ul>
           </div>
         </div>
@@ -675,26 +666,21 @@
 
   </div>
 
-  <!-- 🕹️ 카테고리 클릭 매칭 탭 전환 핵심 자바스크립트 스크립트 -->
   <script>
     function openCategory(categoryName) {
-      // 1. 모든 탭 콘텐츠 영역을 보이지 않게 숨김 처리
       const contents = document.getElementsByClassName("tab-content");
       for (let i = 0; i < contents.length; i++) {
         contents[i].classList.remove("active");
       }
 
-      // 2. 모든 탭 내비게이션 버튼들의 활성화(active) 클래스 제거
       const buttons = document.getElementsByClassName("tab-btn");
       for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.remove("active");
       }
 
-      // 3. 클릭한 특정 카테고리 영역과 버튼만 활성화(active)하여 화면에 노출
       document.getElementById(categoryName).classList.add("active");
       event.currentTarget.classList.add("active");
       
-      // 4. 클릭 시 스무스하게 최상단 본문으로 초점 고정
       window.scrollTo({ top: 350, behavior: 'smooth' });
     }
   </script>
