@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ps1실무역량</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: "Pretendard","Apple SD Gothic Neo",sans-serif;
+      min-height:100vh;
+      background: linear-gradient(
+        135deg,
+        #f4cfd3 0%,
+        #d9d0f7 48%,
+        #d6f0f2 100%
+      );
+      color:#171717;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    .container{
+      width:90%;
+      max-width:1400px;
+      margin:auto;
+      padding:50px 0 80px;
+    }
+
+    /* 왼쪽 세로 텍스트 */
+    .vertical-text{
+      position:fixed;
+      left:28px;
+      top:50%;
+      transform:translateY(-50%) rotate(-180deg);
+      writing-mode:vertical-rl;
+      font-size:5.5rem;
+      font-family:Georgia, serif;
+      opacity:0.85;
+      letter-spacing:-3px;
+      user-select:none;
+    }
+
+    /* 우측 상단 */
+    .top-brand{
+      position:absolute;
+      top:35px;
+      right:40px;
+      font-size:0.9rem;
+      font-weight:600;
+    }
+
+    /* 메인 타이틀 */
+    .hero{
+      padding-left:120px;
+      margin-top:80px;
+      margin-bottom:70px;
+    }
+
+    .hero h1{
+      font-size:5.5rem;
+      line-height:1;
+      letter-spacing:-4px;
+      margin-bottom:24px;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:1.15rem;
+      max-width:700px;
+      color:#444;
+      line-height:1.8;
+    }
+
+    /* 카드 레이아웃 */
+    .grid{
+      padding-left:120px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.18);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.35);
+      border-radius:30px;
+      padding:30px;
+      transition:0.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      background:rgba(255,255,255,0.23);
+    }
+
+    .card h2{
+      font-size:1.5rem;
+      margin-bottom:22px;
+      letter-spacing:-1px;
+    }
+
+    .weather-temp{
+      font-size:4.5rem;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .weather-desc{
+      color:#555;
+      line-height:1.6;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    li{
+      padding:14px 0;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+      line-height:1.6;
+      color:#333;
+    }
+
+    li:last-child{
+      border-bottom:none;
+    }
+
+    /* 통계 */
+    .stat{
+      margin-bottom:24px;
+    }
+
+    .stat-top{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:8px;
+      font-size:0.95rem;
+    }
+
+    .bar{
+      width:100%;
+      height:12px;
+      background:rgba(255,255,255,0.4);
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(
+        90deg,
+        #8d7dff,
+        #7be3d5
+      );
+    }
+
+    footer{
+      padding-left:120px;
+      margin-top:80px;
+      color:#555;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:900px){
+
+      .vertical-text{
+        font-size:3.5rem;
+        left:8px;
+      }
+
+      .hero{
+        padding-left:70px;
+      }
+
+      .grid{
+        padding-left:70px;
+      }
+
+      footer{
+        padding-left:70px;
+      }
+
+      .hero h1{
+        font-size:3.5rem;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .vertical-text{
+        display:none;
+      }
+
+      .hero,
+      .grid,
+      footer{
+        padding-left:0;
+      }
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      .top-brand{
+        right:20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="vertical-text">
+    Gradient
+  </div>
+
+  <div class="top-brand">
+    Simple P.
+  </div>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>
+        ps1<br>
+        실무역량
+      </h1>
+
+      <p>
+        부산의 날씨, 지역 이슈, 부경대학교 뉴스,
+        그리고 사회복지 통계를 감각적인 인터페이스로
+        한눈에 확인할 수 있는 아카이브 페이지입니다.
+      </p>
+    </section>
+
+    <section class="grid">
+
+      <!-- 날씨 -->
+      <div class="card">
+        <h2>🌤 오늘의 날씨</h2>
+
+        <div class="weather-temp">
+          23°
+        </div>
+
+        <div class="weather-desc">
+          부산 · 맑음 · 미세먼지 보통
+        </div>
+      </div>
+
+      <!-- 부산 이슈 -->
+      <div class="card">
+        <h2>📰 부산 이슈</h2>
+
+        <ul>
+          <li>북항 재개발 프로젝트 확대 추진</li>
+          <li>가덕도 신공항 인프라 투자 증가</li>
+          <li>청년 정착 지원 정책 확대</li>
+          <li>부산 관광 콘텐츠 글로벌화</li>
+        </ul>
+      </div>
+
+      <!-- 부경대 뉴스 -->
+      <div class="card">
+        <h2>🎓 부경대 뉴스</h2>
+
+        <ul>
+          <li>AI 융합전공 확대 운영</li>
+          <li>산학협력 창업 프로그램 강화</li>
+          <li>지역혁신 사업 참여 확대</li>
+          <li>학생 맞춤형 취업지원 개편</li>
+        </ul>
+      </div>
+
+      <!-- 사회복지 통계 -->
+      <div class="card">
+        <h2>📊 사회복지 통계</h2>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>청년 우울감 경험률</span>
+            <span>38%</span>
+          </div>
+
+          <div class="bar">
+            <div class="fill" style="width:38%"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>1인 가구 비율</span>
+            <span>35%</span>
+          </div>
+
+          <div class="bar">
+            <div class="fill" style="width:35%"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>청년 고립 위험군</span>
+            <span>22%</span>
+          </div>
+
+          <div class="bar">
+            <div class="fill" style="width:22%"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer>
+      © 2026 ps1실무역량 · Designed by hyeseonjang
+    </footer>
+
+  </div>
+
+</body>
+</html>
