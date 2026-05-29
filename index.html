@@ -14,19 +14,17 @@
     body {
       font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
       min-height: 100vh;
-      /* 자두의 생기발랄한 체리 레드 & 달콤한 피치 옐로우 그래디언트 */
       background: linear-gradient(
         135deg,
-        #ffeeff 0%,
-        #ffdae0 35%,
-        #fff2cc 100%
+        #ffebec 0%,
+        #ffd6d8 40%,
+        #ffeaa7 100%
       );
       color: #171717;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* 자두 만화 특유의 정겹고 귀여운 도트 패턴 배경 레이어 */
     body::before {
       content: "";
       position: absolute;
@@ -101,7 +99,6 @@
       margin-bottom: 24px;
       font-weight: 900;
       color: #ff4e50;
-      /* 만화 타이틀 스타일의 선명한 입체 입체 텍스트 효과 */
       text-shadow: 
         -3px -3px 0 #fff,  
          3px -3px 0 #fff,
@@ -124,7 +121,6 @@
       display: inline-block;
     }
 
-    /* 내 프로필 이미지 트렌디 감성 스티커 테두리 디자인 적용 */
     .hero-profile {
       flex-shrink: 0;
     }
@@ -154,7 +150,6 @@
       z-index: 1;
     }
 
-    /* 전체 카드 디자인 자두 테마 브랜딩 고도화 */
     .card {
       background: rgba(255, 255, 255, 0.55);
       backdrop-filter: blur(20px);
@@ -176,7 +171,6 @@
       box-shadow: 0 18px 40px rgba(255, 78, 80, 0.12);
     }
 
-    /* 자두 아카이브 & 통계 대형 강조 레이아웃 */
     .card.main-jadoo-card, .card.chart-card {
       grid-column: span 2;
       background: rgba(255, 255, 255, 0.8);
@@ -289,7 +283,6 @@
       background: linear-gradient(90deg, #ff7675, #6c5ce7);
     }
 
-    /* 자두 스페셜 활기찬 무빙 프로그레스 효과 */
     .fill.jadoo {
       background: linear-gradient(90deg, #ff4e50, #f9d423, #ff4e50);
       background-size: 200% 100%;
@@ -301,7 +294,6 @@
       100% { background-position: 100% 50%; }
     }
 
-    /* 이미지 액자 보강 갤러리 */
     .jadoo-media-box {
       margin-top: 24px;
       display: grid;
@@ -331,7 +323,6 @@
       box-shadow: 0 14px 28px rgba(255, 78, 80, 0.2);
     }
 
-    /* 통계 컨테이너 */
     .chart-container {
       width: 100%;
       margin-top: 15px;
@@ -441,20 +432,17 @@
 
   <div class="container">
 
-    <!-- 메인 대형 헤드라인 '안녕자두야너무재밌어' 매핑 적용 -->
     <section class="hero">
       <div class="hero-text">
         <h1>
           안녕자두야<br>너무재밌어
         </h1>
+        <!-- 소개문구 1번 버전 적용 완료! -->
         <p>
-          부산의 날씨, 지역 뉴스, 부경대학교 소식 및 사회복지 통계 데이터를 완벽히 유지하면서, 
-          추억 속 국민 캐릭터 <strong>'최자두'</strong>의 명랑하고 상큼한 테마를 듬뿍 입혀 
-          새롭게 디자인한 맞춤형 올인원 포트폴리오 메인 페이지입니다.
+          안녕자두야너무재밌어! 💖 내 최애 캐릭터 <strong>'최자두'</strong>의 새콤달콤 짱 귀여운 테마를 온 동네에 듬뿍 입힌 역대급 메인 페이지라구! 물론 부산 날씨, 핫한 지역 뉴스, 우리 부경대 소식에 사회복지 통계 데이터까지 하나도 안 빼놓고 똑 부러지게 모아둔 올인원 아카이브 룸이니까 다들 눈 크게 뜨고 구경해 봐! 체리 콕! 🍒
         </p>
       </div>
       
-      <!-- 내 프로필 사진 연동 완료 -->
       <div class="hero-profile">
         <img src="513CF823-8901-490D-AF38-954F5942E196.png" alt="내 프로필 사진" onerror="this.src='profile.png'; this.onerror=function(){this.src='profile.jpg';};">
       </div>
@@ -526,6 +514,7 @@
           <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.</li>
         </ul>
 
+        <!-- 이 부분의 사진 파일명들과 깃허브에 올린 파일명이 완벽히 같아야 합니다! -->
         <div class="jadoo-media-box">
           <img src="9791134835910.jpg" alt="안녕 자두야 시즌1 원작 단행본 표지">
           <img src="imgS_20250217105944.jpg" alt="안녕 자두야 시즌6 메인 스틸컷">
