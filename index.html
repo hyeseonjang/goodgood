@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>안녕자두야너무재밌어</title>
+  
+  <!-- 구글 웹폰트에서 가장 동글동글하고 귀여운 '둥근 글씨체(Jua)' 공식 임포트 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic+Eco&display=swap">
+  
   <style>
     * {
       margin: 0;
@@ -12,8 +16,8 @@
     }
 
     body {
-      /* 최대한 둥글둥글하고 귀여운 서체(둥근고딕 계열) 우선 지정 */
-      font-family: "OneMobilePop", "Jalnan", "Comic Sans MS", "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      /* 전체 홈페이지 폰트를 보장된 동글동글 폰트 'Jua'로 전면 지정 */
+      font-family: 'Jua', 'Malgun Gothic', sans-serif;
       min-height: 100vh;
       background: linear-gradient(
         135deg,
@@ -26,19 +30,20 @@
       position: relative;
     }
 
+    /* 자두 만화 분위기의 귀여운 레드 도트 무늬 배경 */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(#ff4e50 18%, transparent 19%);
-      background-size: 24px 24px;
-      opacity: 0.05;
+      background-image: radial-gradient(#ff4e50 20%, transparent 21%);
+      background-size: 26px 26px;
+      opacity: 0.06;
       pointer-events: none;
       z-index: 0;
     }
 
     .container {
-      width: 90%;
+      width: 92%;
       max-width: 1400px;
       margin: auto;
       padding: 50px 0 80px;
@@ -53,7 +58,7 @@
       transform: translateY(-50%) rotate(-180deg);
       writing-mode: vertical-rl;
       font-size: 5.5rem;
-      font-family: "Impact", "Arial Black", sans-serif;
+      font-family: 'Jua', sans-serif;
       font-weight: 900;
       color: #ff4e50;
       opacity: 0.06;
@@ -66,13 +71,13 @@
       position: absolute;
       top: 35px;
       right: 40px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: #fff;
       background: #ff4e50;
-      padding: 8px 18px;
+      padding: 10px 22px;
       border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(255, 78, 80, 0.2);
+      box-shadow: 0 6px 15px rgba(255, 78, 80, 0.25);
     }
 
     .hero {
@@ -92,41 +97,41 @@
       flex: 1;
     }
 
-    /* 🍒 메인 제목: 진짜 자두 애니메이션 로고처럼 극대화한 귀여운 폰트 디자인 */
+    /* 🍒 메인 제목: 완벽하게 동글동글하고 통통 튀는 입체 버블 텍스트 */
     .hero h1 {
       font-size: 6rem;
       line-height: 1.1;
-      letter-spacing: -1px;
+      letter-spacing: 1px;
       margin-bottom: 26px;
-      font-weight: 900;
       color: #ff4e50;
-      /* 여러 겹의 테두리를 겹쳐서 뚱뚱하고 팝방 터지는 만화 글씨 효과 연출 */
+      font-family: 'Jua', sans-serif;
       text-shadow: 
         -3px -3px 0 #fff,  
          3px -3px 0 #fff,
         -3px  3px 0 #fff,
          3px  3px 0 #fff,
-        -5px -5px 0 #ff4e50,  
-         5px -5px 0 #ff4e50,
-        -5px  5px 0 #ff4e50,
-         5px  5px 0 #ff4e50,
-         8px  8px 0px #ffeaa7,
-         12px 12px 0px rgba(255, 78, 80, 0.15);
+        -6px -6px 0 #ff4e50,  
+         6px -6px 0 #ff4e50,
+        -6px  6px 0 #ff4e50,
+         6px  6px 0 #ff4e50,
+         10px 10px 0px #ffeaa7,
+         14px 14px 0px rgba(255, 78, 80, 0.2);
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #222;
       line-height: 1.8;
       word-break: keep-all;
-      background: rgba(255, 255, 255, 0.6);
-      padding: 18px 24px;
-      border-radius: 24px;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px 26px;
+      border-radius: 30px;
+      border: 3px solid #fff;
+      box-shadow: 0 10px 25px rgba(255, 78, 80, 0.05);
       display: inline-block;
     }
 
+    /* 내 사진 프로필 스티커 디자인 */
     .hero-profile {
       flex-shrink: 0;
     }
@@ -135,7 +140,7 @@
       width: 210px;
       height: 265px;
       object-fit: cover;
-      border-radius: 32px;
+      border-radius: 35px;
       box-shadow: 0 15px 35px rgba(255, 78, 80, 0.2);
       border: 6px solid #fff;
       background-color: #fff;
@@ -151,17 +156,18 @@
       padding-left: 120px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      gap: 26px;
       position: relative;
       z-index: 1;
     }
 
+    /* 극강의 둥글둥글 카드 상자 모서리 */
     .card {
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      border-radius: 32px;
+      border: 3px solid #fff;
+      border-radius: 40px;
       padding: 35px;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       display: flex;
@@ -172,22 +178,18 @@
 
     .card:hover {
       transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.85);
-      border: 2px solid #ff4e50;
-      box-shadow: 0 18px 40px rgba(255, 78, 80, 0.12);
+      background: rgba(255, 255, 255, 0.9);
+      border: 3px solid #ff4e50;
+      box-shadow: 0 20px 45px rgba(255, 78, 80, 0.15);
     }
 
     .card.main-jadoo-card, .card.chart-card {
       grid-column: span 2;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
     }
     
     .card.main-jadoo-card {
       border: 3px dashed #ff4e50;
-    }
-
-    .card.chart-card {
-      border: 2px solid rgba(255, 255, 255, 0.9);
     }
     
     @media (max-width: 1100px) {
@@ -196,9 +198,8 @@
       }
     }
 
-    /* 🍒 각 카드 제목: 더 볼드하고 귀여운 자두색 테두리 글씨 효과 살짝 추가 */
     .card h2 {
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       margin-bottom: 22px;
       letter-spacing: -0.5px;
       font-weight: 900;
@@ -210,18 +211,12 @@
     
     .card.main-jadoo-card h2, .card.chart-card h2 {
       color: #ff4e50;
-      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    }
-    
-    .card.main-jadoo-card h2 {
-      font-size: 1.85rem;
     }
 
     .weather-temp {
       font-size: 4.8rem;
       font-weight: 900;
       margin-bottom: 8px;
-      letter-spacing: -2px;
       color: #ff4e50;
       text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
     }
@@ -229,7 +224,6 @@
     .weather-temp::after {
       content: "°C";
       font-size: 2.2rem;
-      font-weight: 800;
       margin-left: 2px;
       vertical-align: super;
       text-shadow: none;
@@ -237,8 +231,7 @@
 
     .weather-desc {
       color: #444;
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.1rem;
     }
 
     ul {
@@ -247,10 +240,10 @@
 
     li {
       padding: 15px 0;
-      border-bottom: 1px solid rgba(255, 78, 80, 0.12);
+      border-bottom: 2px dashed rgba(255, 78, 80, 0.12);
       line-height: 1.6;
       color: #222;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
     li:last-child {
@@ -262,34 +255,34 @@
     }
 
     .stat {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .stat:last-of-type {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     .stat-top {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 1rem;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #333;
     }
 
     .bar {
       width: 100%;
-      height: 16px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 999px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50px;
       overflow: hidden;
-      border: 1px solid rgba(255, 78, 80, 0.15);
+      border: 2px solid rgba(255, 78, 80, 0.15);
     }
 
     .fill {
       height: 100%;
-      border-radius: 999px;
+      border-radius: 50px;
       background: linear-gradient(90deg, #ff7675, #6c5ce7);
     }
 
@@ -304,47 +297,58 @@
       100% { background-position: 100% 50%; }
     }
 
+    /* 📸 자두 사진 원천 출력 보장형 래퍼 구조 */
     .jadoo-media-box {
-      margin-top: 24px;
+      margin-top: 25px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .jadoo-media-box .img-wrapper {
+      width: 100%;
+      background: #fff;
+      padding: 6px;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(255, 78, 80, 0.08);
+      border: 2px solid rgba(255, 78, 80, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .jadoo-media-box img {
       width: 100%;
-      height: 160px;
+      height: 170px;
       object-fit: cover;
-      border-radius: 20px;
-      border: 4px solid #fff;
-      box-shadow: 0 8px 20px rgba(255, 78, 80, 0.08);
+      border-radius: 18px;
+      display: block;
       transition: all 0.3s ease;
-      background-color: #fff;
     }
     
     .jadoo-media-box img.gif-asset {
       object-fit: contain;
-      background: #fff0f1;
     }
 
-    .jadoo-media-box img:hover {
-      transform: translateY(-6px) scale(1.04);
+    .jadoo-media-box .img-wrapper:hover {
+      transform: translateY(-6px) scale(1.03);
       border-color: #ff4e50;
-      box-shadow: 0 14px 28px rgba(255, 78, 80, 0.2);
+      box-shadow: 0 15px 30px rgba(255, 78, 80, 0.2);
     }
 
     .chart-container {
       width: 100%;
       margin-top: 15px;
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.7);
       padding: 22px;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      border: 2px solid #fff;
     }
 
     .chart-bar {
       fill: #ff7675;
-      transition: fill 0.3s, transform 0.3s;
+      transition: fill 0.3s;
       cursor: pointer;
     }
 
@@ -352,9 +356,12 @@
       fill: #ff4e50;
     }
 
+    .chart-text, .chart-value {
+      font-family: 'Jua', sans-serif;
+    }
+
     .chart-text {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 12px;
       fill: #333;
     }
 
@@ -373,8 +380,7 @@
       padding-left: 120px;
       margin-top: 80px;
       color: #666;
-      font-size: 0.98rem;
-      font-weight: 700;
+      font-size: 1.05rem;
     }
 
     @media (max-width: 900px) {
@@ -452,7 +458,7 @@
         </p>
       </div>
       
-      <!-- 사용자님 프로필 사진 필수 포함 확인[cite: 2] -->
+      <!-- 내 증명사진 (무조건 포함 필수 영역)[cite: 2] -->
       <div class="hero-profile">
         <img src="513CF823-8901-490D-AF38-954F5942E196.png" alt="내 프로필 사진" onerror="this.src='profile.png'; this.onerror=function(){this.src='profile.jpg';};">
       </div>
@@ -460,38 +466,39 @@
 
     <section class="grid">
 
-      <!-- 1. 오늘의 날씨 카드 -->
+      <!-- 1. 오늘의 날씨 카드[cite: 2] -->
       <div class="card">
         <h2>🌤 오늘의 날씨</h2>
         <div class="weather-temp">23</div>
-        <div class="weather-desc">부산 · 맑음 · 미세먼지 보통</div>
+        <div class="weather-desc">부산 · 맑음 · 미세먼지 보통[cite: 2]</div>
       </div>
 
-      <!-- 2. 부산 이슈 카드 -->
+      <!-- 2. 부산 이슈 카드[cite: 2] -->
       <div class="card">
         <h2>📰 부산 이슈</h2>
         <ul>
-          <li>북항 재개발 프로젝트 확대 추진</li>
-          <li>가덕도 신공항 인프라 투자 증가</li>
-          <li>청년 정착 지원 정책 확대</li>
-          <li>부산 관광 콘텐츠 글로벌화</li>
+          <li>북항 재개발 프로젝트 확대 추진[cite: 2]</li>
+          <li>가덕도 신공항 인프라 투자 증가[cite: 2]</li>
+          <li>청년 정착 지원 정책 확대[cite: 2]</li>
+          <li>부산 관광 콘텐츠 글로벌화[cite: 2]</li>
         </ul>
       </div>
 
-      <!-- 3. 부경대 뉴스 카드 -->
+      <!-- 3. 부경대 뉴스 카드[cite: 2] -->
       <div class="card">
         <h2>🎓 부경대 뉴스</h2>
         <ul>
-          <li>AI 융합전공 확대 운영</li>
-          <li>산학협력 창업 프로그램 강화</li>
-          <li>지역혁신 사업 참여 확대</li>
-          <li>학생 맞춤형 취업지원 개편</li>
+          <li>AI 융합전공 확대 운영[cite: 2]</li>
+          <li>산학협력 창업 프로그램 강화[cite: 2]</li>
+          <li>지역혁신 사업 참여 확대[cite: 2]</li>
+          <li>학생 맞춤형 취업지원 개편[cite: 2]</li>
         </ul>
       </div>
 
-      <!-- 4. 사회복지 통계 카드 -->
+      <!-- 4. 사회복지 통계 카드 (종합 6대 지표 확장본)[cite: 2] -->
       <div class="card">
-        <h2>📊 사회복지 통계</h2>
+        <h2>📊 사회복지 관련 통계 (종합)</h2>
+        
         <div class="stat">
           <div class="stat-top">
             <span>청년 우울감 경험률</span>
@@ -499,6 +506,56 @@
           </div>
           <div class="bar">
             <div class="fill" style="width: 38%"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>독거노인 돌봄 서비스 만족도</span>
+            <span>84%[cite: 2]</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width: 84%; background: linear-gradient(90deg, #ff7675, #ffb300);"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>공공 아동 보육시설 충족률[cite: 2]</span>
+            <span>62%[cite: 2]</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width: 62%; background: linear-gradient(90deg, #ff7675, #1dd1a1);"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>다문화 가정 정착 지원율[cite: 2]</span>
+            <span>55%[cite: 2]</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width: 55%; background: linear-gradient(90deg, #6c5ce7, #7be3d5);"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>장애인 의무 고용 이행률[cite: 2]</span>
+            <span>47%[cite: 2]</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width: 47%; background: linear-gradient(90deg, #8d7dff, #ff7675);"></div>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            <span>노인 빈곤 해소를 위한 일자리 참여율[cite: 2]</span>
+            <span>71%[cite: 2]</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width: 71%; background: linear-gradient(90deg, #ff4e50, #f9d423);"></div>
           </div>
         </div>
       </div>
@@ -509,8 +566,8 @@
         
         <div class="stat">
           <div class="stat-top">
-            <span>최자두 명랑 & 골목대장 지수</span>
-            <span>100% 만점</span>
+            <span>최자두 명랑 & 골목대장 지수[cite: 2]</span>
+            <span>100% 만점[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill jadoo" style="width: 100%"></div>
@@ -524,11 +581,17 @@
           <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.[cite: 2]</li>
         </ul>
 
-        <!-- 연동 자두 자산 3형제[cite: 2] -->
+        <!-- 📸 자두 이미지 보장형 갤러리 구조화[cite: 2] -->
         <div class="jadoo-media-box">
-          <img src="9791134835910.jpg" alt="안녕 자두야 시즌1 원작 단행본 표지">
-          <img src="imgS_20250217105944.jpg" alt="안녕 자두야 시즌6 메인 스틸컷">
-          <img src="23007227_p.gif" class="gif-asset" alt="자두 뮤지컬 스페셜 포스터 애니메이션">
+          <div class="img-wrapper">
+            <img src="9791134835910.jpg" alt="안녕 자두야 시즌1 원작 단행본 표지">
+          </div>
+          <div class="img-wrapper">
+            <img src="imgS_20250217105944.jpg" alt="안녕 자두야 시즌6 메인 스틸컷">
+          </div>
+          <div class="img-wrapper">
+            <img src="23007227_p.gif" class="gif-asset" alt="자두 뮤지컬 스페셜 포스터 애니메이션">
+          </div>
         </div>
       </div>
 
@@ -547,25 +610,25 @@
             <line x1="320" y1="0" x2="320" y2="210" class="chart-grid-line"></line>
             <line x1="380" y1="0" x2="380" y2="210" class="chart-grid-line"></line>
 
-            <text x="10" y="35" class="chart-text">경기도</text>
+            <text x="10" y="35" class="chart-text">경기도[cite: 2]</text>
             <rect x="80" y="20" width="290" height="22" rx="6" class="chart-bar" style="fill: #ff4e50;"></rect>
-            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 10px;">14.5만명</text>
+            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 10px;">14.5만명[cite: 2]</text>
 
-            <text x="10" y="75" class="chart-text">서울특별시</text>
+            <text x="10" y="75" class="chart-text">서울특별시[cite: 2]</text>
             <rect x="80" y="60" width="180" height="22" rx="6" class="chart-bar" style="fill: #ff7675;"></rect>
-            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 10px;">9.1만명</text>
+            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 10px;">9.1만명[cite: 2]</text>
 
-            <text x="10" y="115" class="chart-text">부산광역시</text>
+            <text x="10" y="115" class="chart-text">부산광역시[cite: 2]</text>
             <rect x="80" y="100" width="95" height="22" rx="6" class="chart-bar" style="fill: #ffa7a8;"></rect>
-            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 10px;">4.2만명</text>
+            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 10px;">4.2만명[cite: 2]</text>
 
-            <text x="10" y="155" class="chart-text">경상남도</text>
+            <text x="10" y="155" class="chart-text">경상남도[cite: 2]</text>
             <rect x="80" y="140" width="85" height="22" rx="6" class="chart-bar" style="fill: #ffd6d8; stroke: rgba(255,78,80,0.2);"></rect>
-            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.8만명</text>
+            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.8만명[cite: 2]</text>
 
-            <text x="10" y="195" class="chart-text">인천광역시</text>
+            <text x="10" y="195" class="chart-text">인천광역시[cite: 2]</text>
             <rect x="80" y="180" width="75" height="22" rx="6" class="chart-bar" style="fill: #ffeaa7;"></rect>
-            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.2만명</text>
+            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.2만명[cite: 2]</text>
 
             <line x1="80" y1="0" x2="80" y2="215" style="stroke: #ff4e50; stroke-width: 2;"></line>
           </svg>
@@ -575,7 +638,7 @@
     </section>
 
     <footer>
-      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)
+      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)[cite: 2]
     </footer>
 
   </div>
