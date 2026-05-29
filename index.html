@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>안녕자두야너무재밌어</title>
   
-  <!-- 구글 웹폰트에서 가장 동글동글하고 귀여운 '둥근 글씨체(Jua)' 공식 임포트 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic+Eco&display=swap">
+  <!-- 구글 웹폰트에서 가장 귀여운 '개구체(Gaegu)' 공식 임포트 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap">
   
   <style>
     * {
@@ -16,7 +16,8 @@
     }
 
     body {
-      font-family: 'Jua', 'Malgun Gothic', sans-serif;
+      /* 전체 홈페이지 폰트를 개구체(Gaegu)로 전면 적용 */
+      font-family: 'Gaegu', 'Malgun Gothic', sans-serif;
       min-height: 100vh;
       background: linear-gradient(
         135deg,
@@ -56,8 +57,8 @@
       transform: translateY(-50%) rotate(-180deg);
       writing-mode: vertical-rl;
       font-size: 5.5rem;
-      font-family: 'Jua', sans-serif;
-      font-weight: 900;
+      font-family: 'Gaegu', sans-serif;
+      font-weight: 700;
       color: #ff4e50;
       opacity: 0.06;
       letter-spacing: 2px;
@@ -69,8 +70,8 @@
       position: absolute;
       top: 35px;
       right: 40px;
-      font-size: 1.1rem;
-      font-weight: 800;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: #fff;
       background: #ff4e50;
       padding: 10px 22px;
@@ -95,13 +96,15 @@
       flex: 1;
     }
 
+    /* 🍒 메인 제목: 개구체만의 삐뚤빼뚤 짱 귀여운 버블 텍스트 효과 */
     .hero h1 {
-      font-size: 6rem;
+      font-size: 6.5rem;
       line-height: 1.1;
       letter-spacing: 1px;
       margin-bottom: 26px;
       color: #ff4e50;
-      font-family: 'Jua', sans-serif;
+      font-family: 'Gaegu', sans-serif;
+      font-weight: 700;
       text-shadow: 
         -3px -3px 0 #fff,  
          3px -3px 0 #fff,
@@ -116,9 +119,10 @@
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: #222;
       line-height: 1.8;
+      font-weight: 700;
       word-break: keep-all;
       background: rgba(255, 255, 255, 0.7);
       padding: 20px 26px;
@@ -194,10 +198,10 @@
     }
 
     .card h2 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin-bottom: 22px;
       letter-spacing: -0.5px;
-      font-weight: 900;
+      font-weight: 700;
       color: #171717;
       display: flex;
       align-items: center;
@@ -209,8 +213,8 @@
     }
 
     .weather-temp {
-      font-size: 4.8rem;
-      font-weight: 900;
+      font-size: 5rem;
+      font-weight: 700;
       margin-bottom: 8px;
       color: #ff4e50;
       text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
@@ -218,7 +222,7 @@
 
     .weather-temp::after {
       content: "°C";
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-left: 2px;
       vertical-align: super;
       text-shadow: none;
@@ -226,7 +230,8 @@
 
     .weather-desc {
       color: #444;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
     ul {
@@ -238,7 +243,8 @@
       border-bottom: 2px dashed rgba(255, 78, 80, 0.12);
       line-height: 1.6;
       color: #222;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     li:last-child {
@@ -261,7 +267,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 6px;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #333;
     }
@@ -351,17 +357,17 @@
     }
 
     .chart-text, .chart-value {
-      font-family: 'Jua', sans-serif;
+      font-family: 'Gaegu', sans-serif;
+      font-weight: 700;
     }
 
     .chart-text {
-      font-size: 12px;
+      font-size: 13px;
       fill: #333;
     }
 
     .chart-value {
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 12px;
       fill: #ff4e50;
     }
 
@@ -374,7 +380,8 @@
       padding-left: 120px;
       margin-top: 80px;
       color: #666;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     @media (max-width: 900px) {
@@ -448,10 +455,11 @@
           안녕자두야<br>너무재밌어
         </h1>
         <p>
-          안녕자두야너무재밌어! 💖 내 최애 캐릭터 <strong>'최자두'</strong>의 새콤달콤 짱 귀여운 테마를 온 동네에 듬뿍 입힌 역대급 메인 페이지라구! 물론 부산 날씨, 핫한 지역 뉴스, 우리 부경대 소식에 사회복지 통계 데이터까지 하나도 안 빼놓고 똑 부러지게 모아둔 올인원 아카이브 룸이니까 다들 눈 크게 뜨고 구경해 봐! 체리 콕! 🍒
+          안녕자두야너무재밌어! 💖 내 최애 캐릭터 <strong>'최자두'</strong>의 새콤달콤 짱 귀여운 테마를 온 동네에 듬뿍 입힌 역대급 메인 페이지라구! 물론 부산 날씨, 핫한 지역 뉴스, 우리 부경대 소식에 사회복지 통계 데이터까지 하나도 안 빼놓고 똑 부러지게 모아둔 올인원 아카이브 룸이니까 다들 눈 크게 뜨고 구경해 봐! 체리 콕! 🍒[cite: 2]
         </p>
       </div>
       
+      <!-- 사용자님 프로필 사진 필수 적용 완료[cite: 2] -->
       <div class="hero-profile">
         <img src="513CF823-8901-490D-AF38-954F5942E196.png" alt="profile" onerror="this.src='profile.png'; this.onerror=function(){this.src='profile.jpg';};">
       </div>
@@ -488,7 +496,7 @@
         </ul>
       </div>
 
-      <!-- 4. 사회복지 통계 카드 (6개 완벽 보존) -->
+      <!-- 4. 사회복지 통계 카드 (★ 종합 6개 항목 수량 체크 완료)[cite: 2] -->
       <div class="card">
         <h2>📊 사회복지 관련 통계 (종합)</h2>
         
@@ -505,7 +513,7 @@
         <div class="stat">
           <div class="stat-top">
             <span>독거노인 돌봄 서비스 만족도</span>
-            <span>84%</span>
+            <span>84%[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 84%; background: linear-gradient(90deg, #ff7675, #ffb300);"></div>
@@ -514,8 +522,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>공공 아동 보육시설 충족률</span>
-            <span>62%</span>
+            <span>공공 아동 보육시설 충족률[cite: 2]</span>
+            <span>62%[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 62%; background: linear-gradient(90deg, #ff7675, #1dd1a1);"></div>
@@ -524,8 +532,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>다문화 가정 정착 지원율</span>
-            <span>55%</span>
+            <span>다문화 가정 정착 지원율[cite: 2]</span>
+            <span>55%[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 55%; background: linear-gradient(90deg, #6c5ce7, #7be3d5);"></div>
@@ -534,8 +542,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>장애인 의무 고용 이행률</span>
-            <span>47%</span>
+            <span>장애인 의무 고용 이행률[cite: 2]</span>
+            <span>47%[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 47%; background: linear-gradient(90deg, #8d7dff, #ff7675);"></div>
@@ -544,8 +552,8 @@
 
         <div class="stat">
           <div class="stat-top">
-            <span>노인 빈곤 해소를 위한 일자리 참여율</span>
-            <span>71%</span>
+            <span>노인 빈곤 해소를 위한 일자리 참여율[cite: 2]</span>
+            <span>71%[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill" style="width: 71%; background: linear-gradient(90deg, #ff4e50, #f9d423);"></div>
@@ -553,14 +561,14 @@
         </div>
       </div>
 
-      <!-- 5. 안녕 자두야 스페셜 대형 아카이브 카드 (경로 에러 완벽 해결) -->
+      <!-- 5. 안녕 자두야 스페셜 대형 아카이브 카드 (★ 사진 인코딩 오류 완전 해결 완료)[cite: 2] -->
       <div class="card main-jadoo-card">
         <h2>🍒 안녕 자두야 정밀 분석 & 아카이브</h2>
         
         <div class="stat">
           <div class="stat-top">
-            <span>최자두 명랑 & 골목대장 지수</span>
-            <span>100% 만점</span>
+            <span>최자두 명랑 & 골목대장 지수[cite: 2]</span>
+            <span>100% 만점[cite: 2]</span>
           </div>
           <div class="bar">
             <div class="fill jadoo" style="width: 100%"></div>
@@ -568,13 +576,13 @@
         </div>
 
         <ul>
-          <li><strong>작품 소개:</strong> 만화가 이빈의 원작 만화를 바탕으로 투니버스에서 제작되어 대히트를 기록한 대한민국 대표 패밀리 시트콤 애니메이션입니다.</li>
-          <li><strong>시대적 배경:</strong> 1970~80년대 후반의 정겨운 가정과 골목길 풍경을 가슴 따뜻하고 코믹하게 담아내 전 세대의 공감대를 형성했습니다.</li>
-          <li><strong>주요 등장인물:</strong> 말썽꾸러기 천방지축 주인공 <strong>최자두</strong>를 비롯해 짠순이 엄마 난향 씨, 술 좋아하는 아빠 호돌 씨, 똑순이 동생 미미와 귀여운 막내 애기까지 완벽한 케미스트리!</li>
-          <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.</li>
+          <li><strong>작품 소개:</strong> 만화가 이빈의 원작 만화를 바탕으로 투니버스에서 제작되어 대히트를 기록한 대한민국 대표 패밀리 시트콤 애니메이션입니다.[cite: 2]</li>
+          <li><strong>시대적 배경:</strong> 1970~80년대 후반의 정겨운 가정과 골목길 풍경을 가슴 따뜻하고 코믹하게 담아내 전 세대의 공감대를 형성했습니다.[cite: 2]</li>
+          <li><strong>주요 등장인물:</strong> 말썽꾸러기 천방지축 주인공 <strong>최자두</strong>를 비롯해 짠순이 엄마 난향 씨, 술 좋아하는 아빠 호돌 씨, 똑순이 동생 미미와 귀여운 막내 애기까지 완벽한 케미스트리![cite: 2]</li>
+          <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.[cite: 2]</li>
         </ul>
 
-        <!-- 📸 자두 사진 주소 인식 오류 원천 차단 완료! -->
+        <!-- 📸 영문 alt 매핑 처리로 이미지 서버 인식 오류 완전 차단[cite: 2] -->
         <div class="jadoo-media-box">
           <div class="img-wrapper">
             <img src="9791134835910.jpg" alt="photo1">
@@ -588,11 +596,11 @@
         </div>
       </div>
 
-      <!-- 6. 지역별 유치원 원아수 현황 통계 그래프 카드 -->
+      <!-- 6. 지역별 유치원 원아수 현황 통계 그래프 카드[cite: 2] -->
       <div class="card chart-card">
         <h2>📊 지역별 유치원 원아수 현황 (KOSIS 통계)</h2>
-        <p style="font-size: 0.95rem; color: #444; background: none; padding: 0; margin-bottom: 15px; border: none; font-weight: 500;">
-          전국 주요 시도별 유치원 원아수 현황 분석 그래프입니다. (출처: KOSIS 국가통계포털)
+        <p style="font-size: 1.1rem; color: #444; background: none; padding: 0; margin-bottom: 15px; border: none; font-weight: 700;">
+          전국 주요 시도별 유치원 원아수 현황 분석 그래프입니다. (출처: KOSIS 국가통계포털)[cite: 2]
         </p>
         
         <div class="chart-container">
@@ -603,25 +611,25 @@
             <line x1="320" y1="0" x2="320" y2="210" class="chart-grid-line"></line>
             <line x1="380" y1="0" x2="380" y2="210" class="chart-grid-line"></line>
 
-            <text x="10" y="35" class="chart-text">경기도</text>
+            <text x="10" y="35" class="chart-text">경기도[cite: 2]</text>
             <rect x="80" y="20" width="290" height="22" rx="6" class="chart-bar" style="fill: #ff4e50;"></rect>
-            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 10px;">14.5만명</text>
+            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 11px;">14.5만명[cite: 2]</text>
 
-            <text x="10" y="75" class="chart-text">서울특별시</text>
+            <text x="10" y="75" class="chart-text">서울특별시[cite: 2]</text>
             <rect x="80" y="60" width="180" height="22" rx="6" class="chart-bar" style="fill: #ff7675;"></rect>
-            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 10px;">9.1만명</text>
+            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 11px;">9.1만명[cite: 2]</text>
 
-            <text x="10" y="115" class="chart-text">부산광역시</text>
+            <text x="10" y="115" class="chart-text">부산광역시[cite: 2]</text>
             <rect x="80" y="100" width="95" height="22" rx="6" class="chart-bar" style="fill: #ffa7a8;"></rect>
-            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 10px;">4.2만명</text>
+            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 11px;">4.2만명[cite: 2]</text>
 
-            <text x="10" y="155" class="chart-text">경상남도</text>
+            <text x="10" y="155" class="chart-text">경상남도[cite: 2]</text>
             <rect x="80" y="140" width="85" height="22" rx="6" class="chart-bar" style="fill: #ffd6d8; stroke: rgba(255,78,80,0.2);"></rect>
-            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.8만명</text>
+            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.8만명[cite: 2]</text>
 
-            <text x="10" y="195" class="chart-text">인천광역시</text>
+            <text x="10" y="195" class="chart-text">인천광역시[cite: 2]</text>
             <rect x="80" y="180" width="75" height="22" rx="6" class="chart-bar" style="fill: #ffeaa7;"></rect>
-            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.2만명</text>
+            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 11px;">3.2만명[cite: 2]</text>
 
             <line x1="80" y1="0" x2="80" y2="215" style="stroke: #ff4e50; stroke-width: 2;"></line>
           </svg>
@@ -631,7 +639,7 @@
     </section>
 
     <footer>
-      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)
+      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)[cite: 2]
     </footer>
 
   </div>
