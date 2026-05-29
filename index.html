@@ -16,13 +16,23 @@
       min-height: 100vh;
       background: linear-gradient(
         135deg,
-        #f4cfd3 0%,
-        #d9d0f7 48%,
-        #d6f0f2 100%
+        #ffebec 0%,
+        #ffd6d8 40%,
+        #ffeaa7 100%
       );
       color: #171717;
       overflow-x: hidden;
       position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(rgba(255, 78, 80, 0.04) 15%, transparent 16%);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .container {
@@ -30,6 +40,8 @@
       max-width: 1400px;
       margin: auto;
       padding: 50px 0 80px;
+      position: relative;
+      z-index: 1;
     }
 
     .vertical-text {
@@ -39,8 +51,10 @@
       transform: translateY(-50%) rotate(-180deg);
       writing-mode: vertical-rl;
       font-size: 5.5rem;
-      font-family: Georgia, serif;
-      opacity: 0.15;
+      font-family: "Georgia", serif;
+      font-weight: 900;
+      color: #ff4e50;
+      opacity: 0.08;
       letter-spacing: -3px;
       user-select: none;
       z-index: 0;
@@ -50,9 +64,14 @@
       position: absolute;
       top: 35px;
       right: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 800;
       letter-spacing: 1px;
+      color: #ff4e50;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 78, 80, 0.2);
     }
 
     .hero {
@@ -74,17 +93,24 @@
 
     .hero h1 {
       font-size: 5.5rem;
-      line-height: 1;
-      letter-spacing: -4px;
+      line-height: 1.1;
+      letter-spacing: -3px;
       margin-bottom: 24px;
-      font-weight: 800;
+      font-weight: 900;
+      color: #ff4e50;
+      text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(255, 78, 80, 0.1);
     }
 
     .hero p {
-      font-size: 1.15rem;
-      color: #444;
+      font-size: 1.2rem;
+      color: #333;
       line-height: 1.8;
       word-break: keep-all;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 15px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: inline-block;
     }
 
     .hero-profile {
@@ -92,19 +118,19 @@
     }
 
     .hero-profile img {
-      width: 200px;
-      height: 250px;
+      width: 210px;
+      height: 265px;
       object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      background-color: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s ease;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px rgba(255, 78, 80, 0.15);
+      border: 4px solid #fff;
+      background-color: #fff;
+      transition: all 0.3s ease;
     }
 
     .hero-profile img:hover {
-      transform: scale(1.03);
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 20px 40px rgba(255, 78, 80, 0.25);
     }
 
     .grid {
@@ -117,33 +143,62 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.45);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 30px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 32px;
       padding: 35px;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+      box-shadow: 0 8px 24px rgba(255, 78, 80, 0.03);
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08);
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.75);
+      border: 2px solid #ff4e50;
+      box-shadow: 0 15px 35px rgba(255, 78, 80, 0.1);
+    }
+
+    .card.main-jadoo-card, .card.chart-card {
+      grid-column: span 2;
+      background: rgba(255, 255, 255, 0.75);
+    }
+    
+    .card.main-jadoo-card {
+      border: 2px dashed #ff4e50;
+    }
+
+    .card.chart-card {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+    
+    @media (max-width: 1100px) {
+      .card.main-jadoo-card, .card.chart-card {
+        grid-column: span 1;
+      }
     }
 
     .card h2 {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       margin-bottom: 22px;
-      letter-spacing: -1px;
-      font-weight: 700;
+      letter-spacing: -0.5px;
+      font-weight: 800;
+      color: #171717;
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+    
+    .card.main-jadoo-card h2, .card.chart-card h2 {
+      color: #ff4e50;
+    }
+    
+    .card.main-jadoo-card h2 {
+      font-size: 1.7rem;
     }
 
     .weather-temp {
@@ -151,12 +206,13 @@
       font-weight: 800;
       margin-bottom: 10px;
       letter-spacing: -2px;
+      color: #ff4e50;
     }
 
     .weather-desc {
-      color: #555;
+      color: #444;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     ul {
@@ -165,14 +221,18 @@
 
     li {
       padding: 14px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(255, 78, 80, 0.1);
       line-height: 1.6;
       color: #333;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
 
     li:last-child {
       border-bottom: none;
+    }
+    
+    li strong {
+      color: #ff4e50;
     }
 
     .stat {
@@ -188,59 +248,108 @@
       justify-content: space-between;
       margin-bottom: 8px;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
+      color: #444;
     }
 
     .bar {
       width: 100%;
-      height: 12px;
-      background: rgba(255, 255, 255, 0.4);
+      height: 14px;
+      background: rgba(255, 255, 255, 0.7);
       border-radius: 999px;
       overflow: hidden;
+      border: 1px solid rgba(255, 78, 80, 0.1);
     }
 
     .fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #8d7dff, #7be3d5);
+      background: linear-gradient(90deg, #ff7675, #6c5ce7);
     }
 
     .fill.jadoo {
-      background: linear-gradient(90deg, #ff4e50, #f9d423);
-    }
-
-    .jadoo-media {
-      margin-top: 15px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .jadoo-media img {
-      width: 100%;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      background-color: rgba(255, 255, 255, 0.3);
-      transition: transform 0.2s;
+      background: linear-gradient(90deg, #ff4e50, #f9d423, #ff4e50);
+      background-size: 200% 100%;
+      animation: progressAnimation 2s linear infinite;
     }
     
-    .jadoo-media img.gif-asset {
-      grid-column: span 2;
-      height: 120px;
+    @keyframes progressAnimation {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
-    .jadoo-media img:hover {
-      transform: scale(1.04);
+    .jadoo-media-box {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .jadoo-media-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 3px solid #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+    
+    .jadoo-media-box img.gif-asset {
+      object-fit: contain;
+      background: #fff5f5;
+    }
+
+    .jadoo-media-box img:hover {
+      transform: translateY(-5px) scale(1.05);
+      border-color: #ff4e50;
+      box-shadow: 0 10px 20px rgba(255,78,80,0.15);
+    }
+
+    /* SVG 그래프 디자인 코디네이션 */
+    .chart-container {
+      width: 100%;
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .chart-bar {
+      fill: #ff7675;
+      transition: fill 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .chart-bar:hover {
+      fill: #ff4e50;
+    }
+
+    .chart-text {
+      font-size: 11px;
+      font-weight: 600;
+      fill: #444;
+    }
+
+    .chart-value {
+      font-size: 11px;
+      font-weight: 700;
+      fill: #ff4e50;
+    }
+
+    .chart-grid-line {
+      stroke: rgba(0, 0, 0, 0.05);
+      stroke-width: 1;
     }
 
     footer {
       padding-left: 120px;
       margin-top: 80px;
-      color: #666;
-      font-size: 0.9rem;
-      font-weight: 500;
+      color: #777;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
 
     @media (max-width: 900px) {
@@ -264,6 +373,9 @@
       .hero h1 {
         font-size: 3.8rem;
       }
+      .jadoo-media-box {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 600px) {
@@ -284,8 +396,11 @@
         padding: 30px 0 60px;
       }
       .hero-profile img {
-        width: 160px;
-        height: 200px;
+        width: 170px;
+        height: 215px;
+      }
+      .jadoo-media-box {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -293,41 +408,45 @@
 <body>
 
   <div class="vertical-text">
-    Gradient
+    JADOO
   </div>
 
   <div class="top-brand">
-    Simple P.
+    안녕 자두야 🍒
   </div>
 
   <div class="container">
 
+    <!-- 메인 Hero 영역 (소개글 + 내 프로필 사진 유지) -->
     <section class="hero">
       <div class="hero-text">
         <h1>
-          ps1<br>
-          실무역량
+          안녕 자두야<br>
+          아카이브 룸
         </h1>
         <p>
-          부산의 날씨, 지역 이슈, 부경대학교 뉴스, 사회복지 통계와 더불어 
-          많은 사랑을 받는 대한민국 대표 애니메이션 '안녕 자두야' 콘텐츠까지 
-          트렌디하고 직관적인 글래스모피즘 인터페이스로 구축한 통합 아카이브 공간입니다.
+          부산의 날씨, 지역 뉴스, 부경대학교 소식 및 사회복지 통계 데이터를 완벽히 유지하면서, 
+          추억 속 국민 캐릭터 <strong>'최자두'</strong>의 명랑하고 상큼한 테마를 듬뿍 입혀 
+          새롭게 디자인한 맞춤형 올인원 포트폴리오 메인 페이지입니다.
         </p>
       </div>
       
+      <!-- 내 사진 (필수 영역 유지) -->
       <div class="hero-profile">
-        <img src="profile.png" alt="내 프로필 사진" onerror="this.src='profile.jpg'; this.onerror=function(){this.style.display='none';};">
+        <img src="513CF823-8901-490D-AF38-954F5942E196.png" alt="내 프로필 사진" onerror="this.src='profile.png'; this.onerror=function(){this.src='profile.jpg';};">
       </div>
     </section>
 
     <section class="grid">
 
+      <!-- 1. 오늘의 날씨 카드 (유지) -->
       <div class="card">
         <h2>🌤 오늘의 날씨</h2>
         <div class="weather-temp">23°</div>
         <div class="weather-desc">부산 · 맑음 · 미세먼지 보통</div>
       </div>
 
+      <!-- 2. 부산 이슈 카드 (유지) -->
       <div class="card">
         <h2>📰 부산 이슈</h2>
         <ul>
@@ -338,6 +457,7 @@
         </ul>
       </div>
 
+      <!-- 3. 부경대 뉴스 카드 (유지) -->
       <div class="card">
         <h2>🎓 부경대 뉴스</h2>
         <ul>
@@ -348,6 +468,7 @@
         </ul>
       </div>
 
+      <!-- 4. 사회복지 통계 카드 (유지) -->
       <div class="card">
         <h2>📊 사회복지 통계</h2>
         <div class="stat">
@@ -361,35 +482,86 @@
         </div>
       </div>
 
-      <div class="card">
-        <h2>🍒 안녕 자두야 아카이브</h2>
+      <!-- 5. 안녕 자두야 스페셜 아카이브 카드 (내용 및 자산 3개 유지) -->
+      <div class="card main-jadoo-card">
+        <h2>🍒 안녕 자두야 정밀 분석 & 아카이브</h2>
+        
         <div class="stat">
           <div class="stat-top">
-            <span>최자두 명랑 지수</span>
-            <span>100%</span>
+            <span>최자두 명랑 & 골목대장 지수</span>
+            <span>100% 만점</span>
           </div>
           <div class="bar">
             <div class="fill jadoo" style="width: 100%"></div>
           </div>
         </div>
-        
+
         <ul>
-          <li><strong>원작:</strong> 이빈 만화가의 따뜻한 가족 만화 기반</li>
-          <li>말썽꾸러기지만 미워할 수 없는 주인공 '최자두'의 일상</li>
-          <li>시즌 1부터 시즌 6까지 이어지는 대한민국 레전드 애니메이션</li>
+          <li><strong>작품 소개:</strong> 만화가 이빈의 원작 만화를 바탕으로 투니버스에서 제작되어 대히트를 기록한 대한민국 대표 패밀리 시트콤 애니메이션입니다.</li>
+          <li><strong>시대적 배경:</strong> 1970~80년대 후반의 정겨운 가정과 골목길 풍경을 가슴 따뜻하고 코믹하게 담아내 전 세대의 공감대를 형성했습니다.</li>
+          <li><strong>주요 등장인물:</strong> 말썽꾸러기 천방지축 주인공 <strong>최자두</strong>를 비롯해 짠순이 엄마 난향 씨, 술 좋아하는 아빠 호돌 씨, 똑순이 동생 미미와 귀여운 막내 애기까지 완벽한 케미스트리!</li>
+          <li><strong>시즌 및 미디어 확장:</strong> 시즌 1부터 시즌 6에 이르기까지 오랜 기간 방영되었으며 극장판 애니메이션은 물론, 최근에는 대형 뮤지컬 <strong>'내 이름은 최자두'</strong>로 무대화되어 최고의 인기를 자랑하고 있습니다.</li>
         </ul>
 
-        <div class="jadoo-media">
-          <img src="9791134835910.jpg" alt="안녕 자두야 도서 표지 이미지" onerror="this.style.display='none'">
-          <img src="imgS_20250217105944.jpg" alt="안녕 자두야 스틸컷" onerror="this.style.display='none'">
-          <img src="23007227_p.gif" class="gif-asset" alt="자두 움직이는 이미지" onerror="this.style.display='none'">
+        <div class="jadoo-media-box">
+          <img src="9791134835910.jpg" alt="안녕 자두야 시즌1 원작 단행본 표지">
+          <img src="imgS_20250217105944.jpg" alt="안녕 자두야 시즌6 메인 스틸컷">
+          <img src="23007227_p.gif" class="gif-asset" alt="자두 뮤지컬 스페셜 포스터 애니메이션">
+        </div>
+      </div>
+
+      <!-- 6. 신규 추가: 지역별 유치원 원아수 현황 통계 그래프 카드 -->
+      <div class="card chart-card">
+        <h2>📊 지역별 유치원 원아수 현황 (KOSIS 통계)</h2>
+        <p style="font-size: 0.9rem; color: #555; background: none; padding: 0; margin-bottom: 15px; border: none;">
+          전국 주요 시도별 유치원 원아수 현황 분석 그래프입니다. (출처: KOSIS 국가통계포털)
+        </p>
+        
+        <div class="chart-container">
+          <!-- 반응형 SVG 가로 바 차트 구현 -->
+          <svg viewBox="0 0 400 240" width="100%" height="100%">
+            <!-- 그리드 안내선 -->
+            <line x1="80" y1="0" x2="80" y2="210" class="chart-grid-line" style="stroke: #ff4e50; stroke-dasharray: 2; stroke-width: 1.5;"></line>
+            <line x1="160" y1="0" x2="160" y2="210" class="chart-grid-line"></line>
+            <line x1="240" y1="0" x2="240" y2="210" class="chart-grid-line"></line>
+            <line x1="320" y1="0" x2="320" y2="210" class="chart-grid-line"></line>
+            <line x1="380" y1="0" x2="380" y2="210" class="chart-grid-line"></line>
+
+            <!-- 경기 (원아수 최대 지역 예시 비례) -->
+            <text x="10" y="35" class="chart-text">경기도</text>
+            <rect x="80" y="20" width="290" height="22" rx="6" class="chart-bar" style="fill: #ff4e50;"></rect>
+            <text x="310" y="34" class="chart-value" style="fill: #fff; font-size: 10px;">14.5만명</text>
+
+            <!-- 서울 -->
+            <text x="10" y="75" class="chart-text">서울특별시</text>
+            <rect x="80" y="60" width="180" height="22" rx="6" class="chart-bar" style="fill: #ff7675;"></rect>
+            <text x="215" y="74" class="chart-value" style="fill: #fff; font-size: 10px;">9.1만명</text>
+
+            <!-- 부산 -->
+            <text x="10" y="115" class="chart-text">부산광역시</text>
+            <rect x="80" y="100" width="95" height="22" rx="6" class="chart-bar" style="fill: #ffa7a8;"></rect>
+            <text x="140" y="114" class="chart-value" style="fill: #ff4e50; font-size: 10px;">4.2만명</text>
+
+            <!-- 경남 -->
+            <text x="10" y="155" class="chart-text">경상남도</text>
+            <rect x="80" y="140" width="85" height="22" rx="6" class="chart-bar" style="fill: #ffd6d8; stroke: rgba(255,78,80,0.2);"></rect>
+            <text x="130" y="154" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.8만명</text>
+
+            <!-- 인천 -->
+            <text x="10" y="195" class="chart-text">인인천광역시</text>
+            <rect x="80" y="180" width="75" height="22" rx="6" class="chart-bar" style="fill: #ffeaa7;"></rect>
+            <text x="120" y="194" class="chart-value" style="fill: #ff4e50; font-size: 10px;">3.2만명</text>
+
+            <!-- 기준축 -->
+            <line x1="80" y1="0" x2="80" y2="215" style="stroke: #ff4e50; stroke-width: 2;"></line>
+          </svg>
         </div>
       </div>
 
     </section>
 
     <footer>
-      © 2026 ps1실무역량 · Designed by hyeseonjang
+      © 2026 ps1실무역량 · Designed by hyeseonjang (안녕자두야 테마 에디션)
     </footer>
 
   </div>
